@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Online</title>
+    <title>Finalizar Pedido</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,64 +11,63 @@
             padding: 20px;
             background-color: #f8f8f8;
         }
-        .menu {
+        .form-container {
             max-width: 600px;
             margin: 0 auto;
             background-color: #fff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .menu h1 {
+        .form-container h1 {
             text-align: center;
             color: #333;
         }
-        .menu-section {
-            margin-bottom: 20px;
+        .form-group {
+            margin-bottom: 15px;
         }
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-        .order-button {
+        .form-group label {
             display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group textarea {
             width: 100%;
-            text-align: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit-button {
+            width: 100%;
             padding: 10px;
             background-color: #28a745;
             color: white;
-            text-decoration: none;
-            margin-top: 20px;
+            border: none;
             border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #218838;
         }
     </style>
 </head>
 <body>
-    <div class="menu">
-        <h1>Nosso Menu</h1>
-        <div class="menu-section">
-            <h2>Entradas</h2>
-            <div class="menu-item">
-                <p>Salada Caprese</p>
-                <span>R$ 25,00</span>
+    <div class="form-container">
+        <h1>Finalizar Pedido</h1>
+        <form action="https://formspree.io/f/xdknwvzb" method="POST">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
             </div>
-            <div class="menu-item">
-                <p>Bruschetta</p>
-                <span>R$ 18,00</span>
+            <div class="form-group">
+                <label for="mesa">Número da Mesa:</label>
+                <input type="text" id="mesa" name="mesa" required>
             </div>
-        </div>
-        <div class="menu-section">
-            <h2>Pratos Principais</h2>
-            <div class="menu-item">
-                <p>Risoto de Camarão</p>
-                <span>R$ 45,00</span>
+            <div class="form-group">
+                <label for="pedido">Seu Pedido:</label>
+                <textarea id="pedido" name="pedido" rows="5" required></textarea>
             </div>
-            <div class="menu-item">
-                <p>Filé Mignon ao Molho Madeira</p>
-                <span>R$ 55,00</span>
-            </div>
-        </div>
-        <a href="pedido.html" class="order-button">Finalizar Pedido</a>
+            <button type="submit" class="submit-button">Enviar Pedido</button>
+        </form>
     </div>
 </body>
 </html>
